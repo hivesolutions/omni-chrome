@@ -1,0 +1,196 @@
+@charset "utf-8";
+
+/*
+ Hive Omni ERP
+ Copyright (C) 2008 Hive Solutions Lda.
+
+ This file is part of Hive Omni ERP.
+
+ Hive Omni ERP is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ Hive Omni ERP is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with Hive Omni ERP. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
+ __author__    = João Magalhães <joamag@hive.pt>
+ __version__   = 1.0.0
+ __revision__  = $LastChangedRevision: 2353 $
+ __date__      = $LastChangedDate: 2009-04-01 18:22:49 +0100 (qua, 01 Abr 2009) $
+ __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
+ __license__   = GNU General Public License (GPL), Version 3
+*/
+
+body {
+    margin: 0px 0px 0px 0px;
+    min-width: 320px;
+    overflow-x: hidden;
+    width: 320px;
+}
+
+body.omni-style {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+body.notification {
+    margin: 0px 0px 0px 0px;
+}
+
+.loader {
+    display: none;
+    height: 28px;
+    padding: 86px 0px 86px 0px;
+}
+
+.loader .loading-indicator {
+    background-image: url(../images/loading_indicator.png);
+    height: 28px;
+    margin: 0px auto 0px auto;
+    opacity: 0.5;
+    transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s linear;
+    -webkit-transition: opacity 0.3s linear;
+    width: 51px;
+    -webkit-animation: spin 0.6s steps(15, end) infinite;
+    -moz-animation: spin 0.6s steps(15, end) infinite;
+}
+
+.error-message {
+    display: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+.clear {
+    clear: both;
+}
+
+.header {
+    border-bottom: 1px solid #eaeaea;
+    margin-top: 4px;
+    padding-bottom: 6px;
+}
+
+.header > .logo {
+    background: transparent url(../images/frontdoor-header-logo.png) no-repeat center center;
+    float: left;
+    height: 24px;
+    margin-left: 6px;
+    width: 60px;
+}
+
+.header > .user-information {
+    float: right;
+    margin: 4px 6px 0px 0px;
+}
+
+.notifications-list {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.notifications-list li {
+    border-bottom: 1px solid #f4f4f4;
+    list-style: none;
+    padding: 8px 6px 8px 6px;
+}
+
+.notifications-list li:hover {
+    background-color: #f6f6f6;
+}
+
+.notifications-list .notification-image {
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+
+.notifications-list .notification-image > img {
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+}
+
+.notifications-list .notification-contents {
+    color: #4d4d4d;
+    float: left;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 2px 0px 0px 8px;
+    width: 250px;
+}
+
+.notification .notifications-list .notification-contents {
+    width: 230px;
+}
+
+.notifications-list .notification-contents > .notification-description {
+    margin: 0px 0px 0px 0px;
+}
+
+.notifications-list .notification-contents > .notification-delta {
+    font-size: 10px;
+    line-height: 14px;
+    margin: 0px 0px 0px 0px;
+}
+
+.see-all-notifications {
+    color: #3668c6;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 0px 8px 0px;
+    text-align: center;
+}
+
+.see-all-notifications:hover {
+    background-color: #f6f6f6;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+.highlight.highlight-blue {
+    color: #3668c6;
+}
+
+.loading .header,
+.loading .contents,
+.loading .footer {
+    display: none;
+}
+
+.loading .loader {
+    display: block;
+}
+
+.error .header,
+.error .contents,
+.error .footer {
+    display: none;
+}
+
+.error .error-message {
+    display: block;
+}
+
+@-webkit-keyframes spin {
+    from { background-position: 0 0; }
+    to { background-position: 0 -420px; }
+}
+
+@-moz-keyframes spin {
+    from { background-position: 0 0; }
+    to { background-position: 0 -420px; }
+}

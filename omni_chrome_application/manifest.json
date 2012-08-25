@@ -1,0 +1,16 @@
+{
+    "name" : "Frontdoor",
+    "version" : "1.0.4",
+    "description" : "Beautifully crafted point-of-sale, that makes ringing up sales and managing inventory simple and fun.",
+    "icons" : {
+        "16" : "images/frontdoor_icon_16.png",
+        "48" : "images/frontdoor_icon_48.png",
+        "128" : "images/frontdoor_icon_128.png"
+    },
+    "app" : {
+        "urls" : ["*://*.frontdoorhq.com/"],
+        "launch" : {
+            "web_url" : "http://app.frontdoorhq.com"
+        }
+    }
+}
