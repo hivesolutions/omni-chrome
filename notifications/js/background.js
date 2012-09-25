@@ -1,5 +1,5 @@
 // Hive Omni ERP
-// Copyright (C) 2008 Hive Solutions Lda.
+// Copyright (C) 2008-2012 Hive Solutions Lda.
 //
 // This file is part of Hive Omni ERP.
 //
@@ -18,9 +18,9 @@
 
 // __author__    = João Magalhães <joamag@hive.pt> & Tiago Silva <tsilva@hive.pt>
 // __version__   = 1.0.0
-// __revision__  = $LastChangedRevision: 2368 $
-// __date__      = $LastChangedDate: 2009-04-02 06:49:09 +0100 (qui, 02 Abr 2009) $
-// __copyright__ = Copyright (c) 2008 Hive Solutions Lda.
+// __revision__  = $LastChangedRevision$
+// __date__      = $LastChangedDate$
+// __copyright__ = Copyright (c) 2008-2012 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
 jQuery(document).ready(function() {
