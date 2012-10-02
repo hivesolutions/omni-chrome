@@ -18,16 +18,7 @@ limitations under the License.
 <html lang="en">
     <head>
         <script type="text/javascript" src="oauth2.js"></script>
-        <script>
-            window.onload = function() {
-                var url = unescape(window.location.href.match(/from=([^&]+)/)[1]);
-                var adapterName = OAuth2.lookupAdapterName(url.substring(0, url.indexOf("?")));
-                var finisher = new OAuth2(adapterName, OAuth2.FINISH, null,
-                        function(error) {
-                            document.body.innerHTML = error;
-                        });
-            }
-        </script>
+        <script type="text/javascript" src="page.js"></script>
         <title>OAuth 2.0 Finish Page</title>
     </head>
     <body></body>

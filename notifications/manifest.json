@@ -1,4 +1,5 @@
 {
+    "manifest_version": 2,
     "name" : "Frontdoor Notifications",
     "version" : "1.0.0",
     "description" : "Keep track of frontdoor events, with desktop notifications.",
@@ -8,7 +9,7 @@
         "128" : "images/icons/frontdoor_icon_128.png"
     },
     "permissions" : ["*://*.frontdoorhq.com/", "notifications", "background"],
-    "background_page" : "background.html",
+    "background" : "background.html",
     "options_page" : "options.html",
     "browser_action" : {
         "default_icon" : "images/icons/frontdoor_action_icon_19.png",

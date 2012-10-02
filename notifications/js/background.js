@@ -110,6 +110,8 @@ jQuery(document).ready(function() {
     var _body = jQuery("body");
 
     // starts the communication to listen for notifications broadcasted by omni
+    // this should be able to receive the complete set of messages that respect
+    // the current user filtering
     _body.communication("default", {
                 url : "https://api.frontdoorhq.com/communication",
                 timeout : 500,
