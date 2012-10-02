@@ -1,4 +1,5 @@
 {
+    "manifest_version": 2,
     "name" : "Frontdoor",
     "version" : "1.0.4",
     "description" : "Beautifully crafted point-of-sale, that makes ringing up sales and managing inventory simple and fun.",
