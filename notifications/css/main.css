@@ -31,9 +31,10 @@
 
 body {
     margin: 0px 0px 0px 0px;
-    min-width: 320px;
+    min-width: 300px;
     overflow-x: hidden;
-    width: 320px;
+    overflow-y: hidden;
+    width: 300px;
 }
 
 body.omni-style {
@@ -42,7 +43,7 @@ body.omni-style {
 }
 
 body.notification {
-    margin: 0px 0px 0px 0px;
+    display: none;
 }
 
 .loader {
@@ -120,6 +121,8 @@ body.notification {
     border-radius: 4px 4px 4px 4px;
     -moz-border-radius: 4px 4px 4px 4px;
     -webkit-border-radius: 4px 4px 4px 4px;
+    width: 50px;
+    height: 50px;
 }
 
 .notifications-list .notification-contents {
@@ -128,11 +131,11 @@ body.notification {
     font-size: 12px;
     line-height: 16px;
     margin: 2px 0px 0px 8px;
-    width: 250px;
+    width: 230px;
 }
 
 .notification .notifications-list .notification-contents {
-    width: 230px;
+    width: 210px;
 }
 
 .notifications-list .notification-contents > .notification-description {
