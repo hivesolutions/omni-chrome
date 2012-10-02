@@ -1,5 +1,5 @@
 // Hive UX Framework
-// Copyright (C) 2010 Hive Solutions Lda.
+// Copyright (C) 2008-2012 Hive Solutions Lda.
 //
 // This file is part of Hive UX Framework.
 //
@@ -17,7 +17,7 @@
 // __version__   = 1.0.0
 // __revision__  = $LastChangedRevision$
 // __date__      = $LastChangedDate$
-// __copyright__ = Copyright (c) 2010 Hive Solutions Lda.
+// __copyright__ = Copyright (c) 2008-2012 Hive Solutions Lda.
 // __license__   = Hive Solutions Confidential Usage License (HSCUL)
 
 (function($) {
@@ -2465,7 +2465,7 @@ jQuery.uxctrl = function(keycode, callback, arguments) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -2785,7 +2785,7 @@ jQuery.uxctrl = function(keycode, callback, arguments) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  * @credits Ariel Flesler <aflesler@gmail.com>
@@ -4476,7 +4476,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -4648,7 +4648,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -5288,7 +5288,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -5387,7 +5387,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -5800,7 +5800,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -7051,7 +7051,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -8598,7 +8598,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -9112,7 +9112,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -9187,7 +9187,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -9838,7 +9838,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -10080,7 +10080,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -10165,7 +10165,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -10350,7 +10350,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -10441,7 +10441,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -10565,7 +10565,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -10739,7 +10739,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -11164,7 +11164,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -11241,7 +11241,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -11397,7 +11397,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -11839,7 +11839,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -11933,7 +11933,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -12799,7 +12799,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -13781,7 +13781,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
@@ -14041,7 +14041,7 @@ jQuery.uxvisible = function isScrolledIntoView(element, offset) {
  * @version 1.0
  * @date March 10, 2010
  * @category jQuery plugin
- * @copyright Copyright (c) 2010 Hive Solutions Lda.
+ * @copyright Copyright (c) 2008-2012 Hive Solutions Lda.
  * @license Hive Solutions Confidential Usage License (HSCUL) -
  *          http://www.hive.pt/licenses/
  */
