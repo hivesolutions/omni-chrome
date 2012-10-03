@@ -1,0 +1,9 @@
+[submodule "notifications/libs/jquery"]
+	path = notifications/libs/jquery
+	url = git@github.com:hivesolutions/jquery.git
+[submodule "notifications/libs/jquery_util"]
+	path = notifications/libs/jquery_util
+	url = git@github.com:hivesolutions/jquery_util.git
+[submodule "notifications/libs/jquery_util_ui"]
+	path = notifications/libs/jquery_util_ui
+	url = git@github.com:hivesolutions/jquery_util_ui.git
