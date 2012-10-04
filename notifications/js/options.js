@@ -36,4 +36,18 @@ jQuery(document).ready(function() {
                                     messageType : "clear"
                                 });
                     });
+
+            // tenho de utilizar um sistema de templates
+            // do ux para renderizar isto como deve de ser
+            // criar uma abstracao de troca de pagina para
+            // o ux depois ate pode ser utilizada no frontdoor
+            // na parte de ajax
+            jQuery.ajax({
+                        url : "background.html",
+                        error : function(request, status, error) {
+                        },
+                        success : function(data) {
+                            console.info(data);
+                        }
+                    });
         });
