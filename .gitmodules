@@ -3,6 +3,7 @@
 	url = git@github.com:hivesolutions/jquery.git
 [submodule "notifications/libs/jquery_util"]
 	path = notifications/libs/jquery_util
+	url = git@github.com:hivesolutions/jquery_util.git
 [submodule "notifications/libs/uxf"]
 	path = notifications/libs/uxf
 	url = git@github.com:hivesolutions/uxf_bin.git
