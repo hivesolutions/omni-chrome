@@ -84,11 +84,15 @@ body.notification {
 }
 
 .header > .logo {
-    background: transparent url(../images/frontdoor-header-logo.png) no-repeat center center;
+    background: transparent url(../images/frontdoor-header-logo.png) no-repeat left 0px;
     float: left;
     height: 24px;
     margin-left: 6px;
     width: 60px;
+}
+
+.header > .logo:hover {
+	background-position: left -24px;
 }
 
 .header > .user-information {
