@@ -7,3 +7,6 @@
 [submodule "notifications/libs/jquery_util_ui"]
 	path = notifications/libs/jquery_util_ui
 	url = git@github.com:hivesolutions/jquery_util_ui.git
+[submodule "notifications/libs/uxf"]
+	path = notifications/libs/uxf
+	url = git@github.com:hivesolutions/uxf_bin.git
