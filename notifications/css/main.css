@@ -121,8 +121,8 @@ body.notification {
     border-radius: 4px 4px 4px 4px;
     -moz-border-radius: 4px 4px 4px 4px;
     -webkit-border-radius: 4px 4px 4px 4px;
-    width: 50px;
     height: 50px;
+    width: 50px;
 }
 
 .notifications-list .notification-contents {
