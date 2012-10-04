@@ -33,7 +33,6 @@ body {
     margin: 0px 0px 0px 0px;
     min-width: 300px;
     overflow-x: hidden;
-    overflow-y: hidden;
     width: 300px;
 }
 
@@ -92,7 +91,7 @@ body.notification {
 }
 
 .header > .logo:hover {
-	background-position: left -24px;
+    background-position: left -24px;
 }
 
 .header > .user-information {

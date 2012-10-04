@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+/*
+ Hive Omni ERP
+ Copyright (C) 2008-2012 Hive Solutions Lda.
+
+ This file is part of Hive Omni ERP.
+
+ Hive Omni ERP is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ Hive Omni ERP is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with Hive Omni ERP. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
+ __author__    = João Magalhães <joamag@hive.pt>
+ __version__   = 1.0.0
+ __revision__  = $LastChangedRevision$
+ __date__      = $LastChangedDate$
+ __copyright__ = Copyright (c) 2008-2012 Hive Solutions Lda.
+ __license__   = GNU General Public License (GPL), Version 3
+*/
+
+body.options {
+	background: transparent url(../images/background-side.png) repeat-y left top;
+	width: 100%;
+}
+
+body.omni-style.options {
+	font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+	color: #2d2d2d;
+}
+
+.panel-side {
+	float: left;
+	width: 172px;
+	padding: 22px 22px 22px 0px;
+}
+
+.panel-main {
+	float: left;
+	max-width: 888px;
+	min-width: 600px;
+	padding: 22px 22px 22px 22px;
+}
+
+.panel-side .logo {
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0px 0px 0px 22px;
+}
+
+.panel-side ul.menu {
+	list-style: none;
+	padding: 0px 0px 0px 0px;
+	margin: 14px 0px 0px 0px;
+}
+
+.panel-side ul.menu li {
+	margin-bottom: 2px;
+	color: #777777;
+	font-size: 12px;
+	border-left: 6px solid transparent;
+	padding-left: 16px;
+	line-height: 30px;
+}
+
+.panel-side ul.menu li.spacing {
+	height: 26px;
+}
+
+.panel-side ul.menu li:hover {
+	color: #2d2d2d;
+}
+
+.panel-side ul.menu li.active {
+	color: #2d2d2d;
+	border-color: #4d4d4d;
+}
+
+.panel-main h1 {
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 12px 0px;
+	color: #4d4d4d;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+ul.panel-options {
+	list-style: none;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+ul.panel-options > li {
+	border-bottom: 1px solid #f1f1f1;
+	padding: 12px 0px 12px 0px;
+	line-height: 20px;
+}
+
+ul.panel-options > li > .key {
+	float: left;
+	font-weight: bold;
+}
+
+ul.panel-options > li > .value {
+	float: right;
+}
+
+ul.panel-sub-options {
+	list-style: none;
+	padding: 0px 0px 0px 8px;
+	margin: 12px 0px 0px 0px;
+	border-top: 1px dashed #f1f1f1;
+}
+
+ul.panel-sub-options > li {
+	padding: 8px 0px 0px 0px;
+	line-height: 24px;
+}
+
+ul.panel-sub-options > li > .key {
+	float: left;
+}
+
+ul.panel-sub-options > li > .value {
+	float: right;
+}
+
+.button-options {
+	text-align: right;
+	margin: 12px 0px 0px 0px;
+}
+
+.button-options .button {
+	font-size: 14px;
+	padding-bottom: 2px;
+}
+
+.button-options .button:hover {
+	border-bottom: 1px solid #2d2d2d;
+}
