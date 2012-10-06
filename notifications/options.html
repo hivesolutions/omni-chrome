@@ -30,8 +30,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    	<title>Options</title>
-    	
+        <title>Options</title>
+
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 
         <link rel="stylesheet" href="libs/uxf/css/ux.css" type="text/css" />
@@ -42,63 +42,19 @@
         <script type="text/javascript" src="libs/jquery/jquery-1.5.1-min.js"></script>
         <script type="text/javascript" src="libs/uxf/js/ux.js"></script>
         <script type="text/javascript" src="js/options.js"></script>
+
+        <script type="text/javascript" src="js/template.js"></script>
     </head>
     <body class="ux omni-style options">
-    	<div class="panel-side">
-    	    <div class="logo">Frontdoor</div>
-    		<ul class="menu">
-    			<li class="button active">Account</li>
-    			<li class="button">Notifications</li>
-    			<li class="spacing"></li>
-    			<li class="button">Status</li>
-    		</ul>
-    	</div>
-    	<div class="panel-main">
-    		<h1>All Notifications</h1>
-    		<ul class="panel-options">
-    			<li data-edit="1">
-    				<div class="key">oAuth Token</div>
-    				<div class="value">qqewqn3r23rnmwWFEE</div>
-    				<div class="clear"></div>
-    			</li>
-    			<li data-edit="1">
-    				<div class="key">Email</div>
-    				<div class="value">joamag@gmail.com</div>
-    				<div class="clear"></div>
-    			</li>
-    			<li data-edit="1">
-    				<div class="key">Password</div>
-    				<div class="value">*******</div>
-    				<div class="clear"></div>
-    			</li>
-    			<li data-edit="1">
-    				<div class="key">Photos</div>
-    				<div class="value">120</div>
-    				<div class="clear"></div>
-    				<ul class="panel-sub-options">
-    					<li data-edit="1">
-    						<div class="key">Tags you in a comment</div>
-    						<div class="value"><input type="checkbox" class="check-field" value="1" data-checked="1" /></div>
-    						<div class="clear"></div>
-    					</li>
-						<li data-edit="1">
-    						<div class="key">Tags one of your photos</div>
-    						<div class="value"><input type="checkbox" class="check-field" value="1" data-checked="1" /></div>
-    						<div class="clear"></div>
-    					</li>
-						<li data-edit="1">
-    						<div class="key">Someone sells a thing for more than USD 1000</div>
-    						<div class="value"><input type="checkbox" class="check-field" value="1" data-checked="1" /></div>
-    						<div class="clear"></div>
-    					</li>
-    				</ul>
-    				<div class="clear"></div>
-    			</li>
-    		</ul>
-    		<div class="button-options">
-    			<span class="button clear-settings">Clear Settings</span>	
-    		</div>
-    	</div>
-    	<div class="clear"></div>
+        <div class="panel-side">
+            <div class="logo">Frontdoor</div>
+            <ul class="menu">
+                <li class="button active" data-name="account">Account</li>
+                <li class="button" data-name="notifications">Notifications</li>
+                <li class="spacing"></li>
+                <li class="button" data-name="status">Status</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
     </body>
 </html>

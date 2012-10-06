@@ -30,122 +30,122 @@
 */
 
 body.options {
-	background: transparent url(../images/background-side.png) repeat-y left top;
-	width: 100%;
+    background: transparent url(../images/background-side.png) repeat-y left top;
+    width: 100%;
 }
 
 body.omni-style.options {
-	font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-	color: #2d2d2d;
+    color: #2d2d2d;
+    font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
 }
 
 .panel-side {
-	float: left;
-	width: 172px;
-	padding: 22px 22px 22px 0px;
+    float: left;
+    padding: 22px 22px 22px 0px;
+    width: 172px;
 }
 
 .panel-main {
-	float: left;
-	max-width: 888px;
-	min-width: 600px;
-	padding: 22px 22px 22px 22px;
+    float: left;
+    max-width: 888px;
+    min-width: 600px;
+    padding: 22px 22px 22px 22px;
 }
 
 .panel-side .logo {
-	font-size: 18px;
-	font-weight: normal;
-	margin: 0px 0px 0px 22px;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0px 0px 0px 22px;
 }
 
 .panel-side ul.menu {
-	list-style: none;
-	padding: 0px 0px 0px 0px;
-	margin: 14px 0px 0px 0px;
+    list-style: none;
+    margin: 14px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 .panel-side ul.menu li {
-	margin-bottom: 2px;
-	color: #777777;
-	font-size: 12px;
-	border-left: 6px solid transparent;
-	padding-left: 16px;
-	line-height: 30px;
+    border-left: 6px solid transparent;
+    color: #777777;
+    font-size: 12px;
+    line-height: 30px;
+    margin-bottom: 2px;
+    padding-left: 16px;
 }
 
 .panel-side ul.menu li.spacing {
-	height: 26px;
+    height: 26px;
 }
 
 .panel-side ul.menu li:hover {
-	color: #2d2d2d;
+    color: #2d2d2d;
 }
 
 .panel-side ul.menu li.active {
-	color: #2d2d2d;
-	border-color: #4d4d4d;
+    border-color: #4d4d4d;
+    color: #2d2d2d;
 }
 
 .panel-main h1 {
-	font-size: 18px;
-	font-weight: normal;
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 12px 0px;
-	color: #4d4d4d;
-	border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    color: #4d4d4d;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 12px 0px;
 }
 
 ul.panel-options {
-	list-style: none;
-	padding: 0px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
+    list-style: none;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 ul.panel-options > li {
-	border-bottom: 1px solid #f1f1f1;
-	padding: 12px 0px 12px 0px;
-	line-height: 20px;
+    border-bottom: 1px solid #f1f1f1;
+    line-height: 20px;
+    padding: 12px 0px 12px 0px;
 }
 
 ul.panel-options > li > .key {
-	float: left;
-	font-weight: bold;
+    float: left;
+    font-weight: bold;
 }
 
 ul.panel-options > li > .value {
-	float: right;
+    float: right;
 }
 
 ul.panel-sub-options {
-	list-style: none;
-	padding: 0px 0px 0px 8px;
-	margin: 12px 0px 0px 0px;
-	border-top: 1px dashed #f1f1f1;
+    border-top: 1px dashed #f1f1f1;
+    list-style: none;
+    margin: 12px 0px 0px 0px;
+    padding: 0px 0px 0px 8px;
 }
 
 ul.panel-sub-options > li {
-	padding: 8px 0px 0px 0px;
-	line-height: 24px;
+    line-height: 24px;
+    padding: 8px 0px 0px 0px;
 }
 
 ul.panel-sub-options > li > .key {
-	float: left;
+    float: left;
 }
 
 ul.panel-sub-options > li > .value {
-	float: right;
+    float: right;
 }
 
 .button-options {
-	text-align: right;
-	margin: 12px 0px 0px 0px;
+    margin: 12px 0px 0px 0px;
+    text-align: right;
 }
 
 .button-options .button {
-	font-size: 14px;
-	padding-bottom: 2px;
+    font-size: 14px;
+    padding-bottom: 2px;
 }
 
 .button-options .button:hover {
-	border-bottom: 1px solid #2d2d2d;
+    border-bottom: 1px solid #2d2d2d;
 }
