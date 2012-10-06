@@ -453,7 +453,7 @@ TemplateEngine.prototype.process = function(template, options) {
 
     // in case the current state is engine
     // normal (there must be text to be flushed)
-    if(state == TEMPLATE_ENGINE_NORMAL) {
+    if (state == TEMPLATE_ENGINE_NORMAL) {
         // calls the text end callback
         this.callbackData("textEnd");
     }
@@ -494,6 +494,22 @@ TemplateHandler.prototype._get = function(name) {
     }
 
     return current;
+};
+
+TemplateHandler.prototype.eval = function(item, value, operator) {
+    var result = false;
+
+    switch (operator.value) {
+        case "eq" :
+            result = item === value;
+            break;
+
+        case "neq" :
+            result = item !== value;
+            break;
+    }
+
+    return result;
 };
 
 TemplateHandler.prototype.process = function(template) {
@@ -606,10 +622,6 @@ TemplateHandler.prototype.onTagEnd = function(data, start, end) {
 
             // breaks the switch
             break;
-
-        default :
-            // breaks the switch
-            break;
     }
 
     // in case the temporary node is of type close, no need
@@ -682,12 +694,11 @@ TemplateHandler.prototype.traverseNode = function(node) {
 
         case TEMPLATE_NODE_SINGLE :
         case TEMPLATE_NODE_OPEN :
-            this["traverse_" + node.name].call(this, node);
+            // retrievs the method to be used in the current
+            // traverse operation and executes it with the node
+            var method = this["traverse_" + node.name];
+            method.call(this, node);
 
-            // breaks the switch
-            break;
-
-        default :
             // breaks the switch
             break;
     }
@@ -728,9 +739,13 @@ TemplateHandler.prototype.traverse_out = function(node) {
 };
 
 TemplateHandler.prototype.traverse_foreach = function(node) {
+    // retrieves the various parameters to be used
+    // for the processing of the foreach operation
     var item = node.getParameter("item");
     var from = node.getParameter("from");
 
+    // resolves the from value into the
+    // appropriate value
     var value = this.resolve(from);
 
     for (index = 0; index < value.length; index++) {
@@ -741,26 +756,82 @@ TemplateHandler.prototype.traverse_foreach = function(node) {
 };
 
 TemplateHandler.prototype.traverse_if = function(node) {
+    // retrieves the various parameters to be used
+    // for the processing of the if operation
     var item = node.getParameter("item");
     var value = node.getParameter("value");
-    var operator = node.getParameter("op");
+    var operator = node.getParameter("operator");
 
+    // resolves both the item an the value into the
+    // appropriate values
     var _item = this.resolve(item);
     var _value = this.resolve(value);
 
-    var result = false;
+    // evaluates the item and th value using the
+    // provided operator and updates the if result
+    // context value with it
+    var result = this.eval(_item, _value, operator)
+    this.assign("if_result", result);
 
-    switch (operator.value) {
-        case "eq" :
-            result = _item === _value;
-            break;
+    for (var index = 0; index < node.children.length; index++) {
+        var child = node.children[index];
 
-        case "neq" :
-            result = _item !== _value;
+        var _break = false;
+        result = this._get("if_result");
+
+        // switches over the type of node to be traversed,
+        // to print the correct value
+        switch (child.type) {
+            case TEMPLATE_NODE_TEXT :
+                // adds the node name (text value) to the
+                // string buffer
+                result && this.stringBuffer.push(child.name);
+
+                // breaks the switch
+                break;
+
+            case TEMPLATE_NODE_SINGLE :
+            case TEMPLATE_NODE_OPEN :
+                _break = result;
+
+                // retrievs the method to be used in the current
+                // traverse operation and executes it with the node
+                var method = this["traverse_" + child.name];
+                !result && method.call(this, child);
+
+                // breaks the switch
+                break;
+        }
+
+        // in case the break flag is set must break the
+        // loop, no more nodes to be traversed
+        if (_break) {
             break;
+        }
     }
+};
 
-    result && this.traverseNodes(node);
+TemplateHandler.prototype.traverse_elif = function(node) {
+    // retrieves the various parameters to be used
+    // for the processing of the if operation
+    var item = node.getParameter("item");
+    var value = node.getParameter("value");
+    var operator = node.getParameter("operator");
+
+    // resolves both the item an the value into the
+    // appropriate values
+    var _item = this.resolve(item);
+    var _value = this.resolve(value);
+
+    // evaluates the item and th value using the
+    // provided operator and updates the if result
+    // context value with it
+    var result = this.eval(_item, _value, operator)
+    this.assign("if_result", result);
+};
+
+TemplateHandler.prototype.traverse_else = function(node) {
+    this.assign("if_result", true);
 };
 
 var TemplateNode = function(type) {
