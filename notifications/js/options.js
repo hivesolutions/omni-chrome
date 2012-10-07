@@ -27,11 +27,18 @@ var Controller = function() {
 };
 
 Controller.prototype.render_account = function(data) {
+    // retrieves the various options from the local storage
+    // to be used in the display
+    var sessionId = localStorage["frontdoor_session_id"] || "N/A";
+
     // creates the list of items that represent the various
     // options to be presented
     var options = [{
-                key : "oAuth Token",
+                key : "OAuth Token",
                 value : "qqewqn3r23rnmwWFEE"
+            }, {
+                key : "Session Identifier",
+                value : sessionId
             }, {
                 key : "Email",
                 value : "joamag@gmail.com"
@@ -104,6 +111,9 @@ Controller.prototype.change = function(name) {
     // to be used in the loading
     var url = "templates/" + name + ".html.tpl";
 
+    // retrieves the template using a remote call and
+    // handles it by calling the appropriate handler
+    // in the controller structure
     jQuery.ajax({
                 url : url,
                 dataType : "text",
