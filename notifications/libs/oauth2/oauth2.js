@@ -194,10 +194,6 @@ OAuth2.prototype.finishAuth = function() {
                 for (var i = 0, view; view = views[i]; i++) {
                     if (view["oauth-callback"]) {
                         view["oauth-callback"]();
-                        // TODO: Decide whether it's worth it to scope the callback or not.
-                        // Currently, every provider will share the same callback address, but
-                        // that's not such a big deal assuming that they check to see whether
-                        // the token exists instead of blindly trusting that it does.
                     }
                 }
 
