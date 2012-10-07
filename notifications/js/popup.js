@@ -81,7 +81,11 @@ jQuery(document).ready(function() {
             // call will return immediately in case the token is
             // still valid (token cache system)
             oauthClient.authorize(function() {
+                        // retrieves the access token from the oauth client and uses
+                        // it to store in the local data source and to run the start
+                        // session operation
                         var accessToken = oauthClient.getAccessToken();
+                        localStorage["frontdoor_oauth_token"] = accessToken;
                         startSession(accessToken, function(session_id) {
                                     callback(session_id);
                                 }, function() {

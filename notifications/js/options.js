@@ -29,22 +29,23 @@ var Controller = function() {
 Controller.prototype.render_account = function(data) {
     // retrieves the various options from the local storage
     // to be used in the display
+    var oauthToken = localStorage["frontdoor_oauth_token"] || "N/A";
     var sessionId = localStorage["frontdoor_session_id"] || "N/A";
 
     // creates the list of items that represent the various
     // options to be presented
     var options = [{
-                key : "OAuth Token",
-                value : "qqewqn3r23rnmwWFEE"
-            }, {
-                key : "Session Identifier",
-                value : sessionId
-            }, {
                 key : "Email",
                 value : "joamag@gmail.com"
             }, {
                 key : "Password",
-                value : "*******"
+                value : "*************"
+            }, {
+                key : "Session Identifier",
+                value : sessionId
+            }, {
+                key : "OAuth Token",
+                value : oauthToken
             }];
 
     // creates the template handler and assigns the
