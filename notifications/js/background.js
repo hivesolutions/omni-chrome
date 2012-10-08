@@ -121,18 +121,28 @@ jQuery(document).ready(function() {
     // listens for messages from the current extension
     chrome.extension.onRequest.addListener(
             function(request, sender, sendResponse) {
+                // starts the value to be used as the return
+                // value in the callback function
+                var value;
+
                 switch (request.messageType) {
                     case "resetUnread" :
-                        setUnreadNotifications(0);
+                        value = setUnreadNotifications(0);
                         break;
 
                     case "decreaseUnread" :
-                        setUnreadNotifications(unreadNotificationsCount - 1);
+                        value = setUnreadNotifications(unreadNotificationsCount
+                                - 1);
                         break;
 
                     case "clear" :
-                        clearStorage();
+                        value = clearStorage();
                         break;
                 }
+
+                // sends the response back to the callback
+                // handler to notify it about the corrent
+                // handling of the event
+                sendResponse(value);
             });
 });

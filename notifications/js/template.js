@@ -831,8 +831,8 @@ TemplateHandler.prototype.traverse_elif = function(node) {
 };
 
 TemplateHandler.prototype.traverse_else = function(node) {
-	// sets the if result flag to valid, if this code
-	// is reached the next nodes are menat to be executed
+    // sets the if result flag to valid, if this code
+    // is reached the next nodes are menat to be executed
     this.assign("if_result", true);
 };
 

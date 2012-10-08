@@ -70,17 +70,31 @@ Controller.prototype.render_account = function(data) {
     // the complete set of components
     value.uxapply();
 
-    // retrieves the clear settings element
+    // retrieves the clear and refresh settings element
     var clearSettings = jQuery(".clear-settings");
+    var refreshSettings = jQuery(".refresh-settings");
+
+    // "saves" the current instance as the current
+    // controller in use
+    var controller = this;
 
     // registers for the click event on the clear settings
     // element (button)
     clearSettings.click(function() {
                 // sends a request to the background to
                 // clear the current data cache
-                chrome.extension.sendRequest({
+                chrome.extension.sendRequest(null, {
                             messageType : "clear"
+                        }, function(response) {
+
+                             controller.change("account");
                         });
+            });
+
+    // registers for the click event on the clear settings
+    // element (button)
+    refreshSettings.click(function() {
+                controller.change("account");
             });
 };
 
@@ -124,7 +138,7 @@ Controller.prototype.change = function(name) {
                 },
                 success : function(data) {
                     var method = this["render_" + name];
-                    method.call(method, data);
+                    method.call(this, data);
                 }
             });
 };

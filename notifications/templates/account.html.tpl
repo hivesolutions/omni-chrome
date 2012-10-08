@@ -39,6 +39,7 @@
         </li>
     </ul>
     <div class="button-options">
+        <span class="button refresh-settings">Refresh</span>
         <span class="button clear-settings">Clear Settings</span>
     </div>
 </div>
