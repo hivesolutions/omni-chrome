@@ -115,7 +115,7 @@ jQuery(document).ready(function() {
     _body.communication("default", {
                 url : "https://api.frontdoorhq.com/communication",
                 timeout : 500,
-                dataCallbackFunctions : [messageProcessor]
+                callbacks : [messageProcessor]
             });
 
     // listens for messages from the current extension
