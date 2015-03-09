@@ -52,6 +52,8 @@ body.notification {
 }
 
 .loader .loading-indicator {
+    -moz-animation: spin 0.6s steps(15, end) infinite;
+    -webkit-animation: spin 0.6s steps(15, end) infinite;
     background-image: url(../images/loading_indicator.png);
     height: 28px;
     margin: 0px auto 0px auto;
@@ -60,8 +62,6 @@ body.notification {
     -moz-transition: opacity 0.3s linear;
     -webkit-transition: opacity 0.3s linear;
     width: 51px;
-    -webkit-animation: spin 0.6s steps(15, end) infinite;
-    -moz-animation: spin 0.6s steps(15, end) infinite;
 }
 
 .error-message {
