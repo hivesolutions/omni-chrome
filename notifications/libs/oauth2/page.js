@@ -17,9 +17,9 @@
 window.onload = function() {
     var url = unescape(window.location.href.match(/from=([^&]+)/)[1]);
     var adapterName = OAuth2.lookupAdapterName(url.substring(0,
-            url.indexOf("?")));
+        url.indexOf("?")));
     var finisher = new OAuth2(adapterName, OAuth2.FINISH, null,
-            function(error) {
-                document.body.innerHTML = error;
-            });
+        function(error) {
+            document.body.innerHTML = error;
+        });
 }

@@ -28,26 +28,26 @@ var OAuth2 = function(adapterName, config, callback, callbackError) {
     this.adapterName = adapterName;
     var that = this;
     OAuth2.loadAdapter(adapterName, function() {
-                try {
-                    that.adapter = OAuth2.adapters[adapterName];
-                    if (config == OAuth2.FINISH) {
-                        that.finishAuth();
-                        return;
-                    } else if (config) {
-                        that.set("clientId", config.client_id);
-                        that.set("clientSecret", config.client_secret);
-                        that.set("apiScope", config.api_scope);
-                        that.set("domain", config.domain);
-                    }
+        try {
+            that.adapter = OAuth2.adapters[adapterName];
+            if (config == OAuth2.FINISH) {
+                that.finishAuth();
+                return;
+            } else if (config) {
+                that.set("clientId", config.client_id);
+                that.set("clientSecret", config.client_secret);
+                that.set("apiScope", config.api_scope);
+                that.set("domain", config.domain);
+            }
 
-                    // calls the callback indicating the end of the loading of the
-                    // adapter (configuration set and adapter loaded)
-                    callback && callback(that);
-                } catch (exception) {
-                    // calls the callback indicating an error
-                    callbackError && callbackError(exception)
-                }
-            });
+            // calls the callback indicating the end of the loading of the
+            // adapter (configuration set and adapter loaded)
+            callback && callback(that);
+        } catch (exception) {
+            // calls the callback indicating an error
+            callbackError && callbackError(exception)
+        }
+    });
 };
 
 /**
@@ -59,8 +59,7 @@ OAuth2.FINISH = "finish";
  * OAuth 2.0 endpoint adapters known to the library
  */
 OAuth2.adapters = {};
-OAuth2.adapterReverse = localStorage.getItem("adapterReverse")
-        && JSON.parse(localStorage.getItem("adapterReverse")) || {};
+OAuth2.adapterReverse = localStorage.getItem("adapterReverse") && JSON.parse(localStorage.getItem("adapterReverse")) || {};
 
 /**
  * Opens up an authorization popup window. This starts the OAuth 2.0 flow.
@@ -75,19 +74,19 @@ OAuth2.prototype.openAuthorizationCodePopup = function(callback) {
 
     // creates a new tab with the oauth prompt
     chrome.tabs.create({
-                url : this.adapter.authorizationCodeURL(this.getConfig())
-            }, function(tab) {
-                // 1. user grants permission for the application to access the OAuth 2.0
-                // endpoint
-                // 2. the endpoint redirects to the redirect URL.
-                // 3. the extension injects a script into that redirect URL
-                // 4. the injected script redirects back to oauth2.html, also passing
-                // the redirect URL
-                // 5. oauth2.html uses redirect URL to know what OAuth 2.0 flow to finish
-                // (if there are multiple OAuth 2.0 adapters)
-                // 6. Finally, the flow is finished and client code can call
-                // myAuth.getAccessToken() to get a valid access token.
-            });
+        url: this.adapter.authorizationCodeURL(this.getConfig())
+    }, function(tab) {
+        // 1. user grants permission for the application to access the OAuth 2.0
+        // endpoint
+        // 2. the endpoint redirects to the redirect URL.
+        // 3. the extension injects a script into that redirect URL
+        // 4. the injected script redirects back to oauth2.html, also passing
+        // the redirect URL
+        // 5. oauth2.html uses redirect URL to know what OAuth 2.0 flow to finish
+        // (if there are multiple OAuth 2.0 adapters)
+        // 6. Finally, the flow is finished and client code can call
+        // myAuth.getAccessToken() to get a valid access token.
+    });
 };
 
 /**
@@ -104,19 +103,19 @@ OAuth2.prototype.getAccessAndRefreshTokens = function(authorizationCode, callbac
     // Make an XHR to get the token
     var xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function(event) {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200) {
-                        var obj = that.adapter.parseAccessToken(xhr.responseText);
-                        // Callback with the tokens
-                        callback(obj.accessToken, obj.refreshToken,
-                                obj.expiresIn);
-                    }
-                }
-            });
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                var obj = that.adapter.parseAccessToken(xhr.responseText);
+                // Callback with the tokens
+                callback(obj.accessToken, obj.refreshToken,
+                    obj.expiresIn);
+            }
+        }
+    });
 
     var method = that.adapter.accessTokenMethod();
     var items = that.adapter.accessTokenParams(authorizationCode,
-            that.getConfig());
+        that.getConfig());
     var key = null;
     if (method == "POST") {
         var formData = new FormData();
@@ -129,8 +128,7 @@ OAuth2.prototype.getAccessAndRefreshTokens = function(authorizationCode, callbac
         var url = that.adapter.accessTokenURL();
         var params = "?";
         for (key in items) {
-            params += encodeURIComponent(key) + "="
-                    + encodeURIComponent(items[key]) + "&";
+            params += encodeURIComponent(key) + "=" + encodeURIComponent(items[key]) + "&";
         }
         xhr.open(method, url + params, true);
         xhr.send();
@@ -181,35 +179,34 @@ OAuth2.prototype.finishAuth = function() {
     var authorizationCode = that.adapter.parseAuthorizationCode(window.location.href);
     console.log(authorizationCode);
     that.getAccessAndRefreshTokens(authorizationCode, function(at, rt, exp) {
-                that.set("accessToken", at);
-                that.set("expiresIn", exp);
-                // Most OAuth 2.0 providers don"t have a refresh token
-                if (rt) {
-                    that.set("refreshToken", rt);
-                }
-                that.set("accessTokenDate", (new Date()).valueOf());
+        that.set("accessToken", at);
+        that.set("expiresIn", exp);
+        // Most OAuth 2.0 providers don"t have a refresh token
+        if (rt) {
+            that.set("refreshToken", rt);
+        }
+        that.set("accessTokenDate", (new Date()).valueOf());
 
-                // Loop through existing extension views and excute any stored callbacks.
-                var views = chrome.extension.getViews();
-                for (var i = 0, view; view = views[i]; i++) {
-                    if (view["oauth-callback"]) {
-                        view["oauth-callback"]();
-                    }
-                }
+        // Loop through existing extension views and excute any stored callbacks.
+        var views = chrome.extension.getViews();
+        for (var i = 0, view; view = views[i]; i++) {
+            if (view["oauth-callback"]) {
+                view["oauth-callback"]();
+            }
+        }
 
-                // Once we get here, close the current tab and we're good to go.
-                // The following works around bug: crbug.com/84201
-                window.open("", "_self", "");
-                window.close();
-            });
+        // Once we get here, close the current tab and we're good to go.
+        // The following works around bug: crbug.com/84201
+        window.open("", "_self", "");
+        window.close();
+    });
 };
 
 /**
  * @return True iff the current access token has expired
  */
 OAuth2.prototype.isAccessTokenExpired = function() {
-    return (new Date().valueOf() - this.get("accessTokenDate")) > this.get("expiresIn")
-            * 1000;
+    return (new Date().valueOf() - this.get("accessTokenDate")) > this.get("expiresIn") * 1000;
 };
 
 /**
@@ -255,10 +252,10 @@ OAuth2.prototype.clear = function(key) {
  */
 OAuth2.prototype.getConfig = function() {
     return {
-        clientId : this.get("clientId"),
-        clientSecret : this.get("clientSecret"),
-        apiScope : this.get("apiScope"),
-        domain : this.get("domain")
+        clientId: this.get("clientId"),
+        clientSecret: this.get("clientSecret"),
+        apiScope: this.get("apiScope"),
+        domain: this.get("domain")
     };
 };
 
@@ -281,8 +278,8 @@ OAuth2.loadAdapter = function(adapterName, callback) {
     script.type = "text/javascript";
     script.src = "/libs/oauth2/adapters/" + adapterName + ".js";
     script.addEventListener("load", function() {
-                callback();
-            });
+        callback();
+    });
     head.appendChild(script);
 };
 
@@ -298,15 +295,16 @@ OAuth2.loadAdapter = function(adapterName, callback) {
  *             If the specified adapter is invalid
  */
 OAuth2.adapter = function(name, impl) {
-    var implementing = "authorizationCodeURL redirectURL \
+    var implementing =
+        "authorizationCodeURL redirectURL \
     accessTokenURL accessTokenMethod accessTokenParams accessToken";
 
     // Check for missing methods
     implementing.split(" ").forEach(function(method, index) {
-                if (!method in impl) {
-                    throw "Invalid adapter! Missing method: " + method;
-                }
-            });
+        if (!method in impl) {
+            throw "Invalid adapter! Missing method: " + method;
+        }
+    });
 
     // Save the adapter in the adapter registry
     OAuth2.adapters[name] = impl;
@@ -315,7 +313,7 @@ OAuth2.adapter = function(name, impl) {
 
     // Store the the adapter lookup table in localStorage
     localStorage.setItem("adapterReverse",
-            JSON.stringify(OAuth2.adapterReverse));
+        JSON.stringify(OAuth2.adapterReverse));
 };
 
 /**
@@ -349,15 +347,15 @@ OAuth2.prototype.authorize = function(callback) {
             // There's an existing access token but it's expired
             if (that.get("refreshToken")) {
                 that.refreshAccessToken(that.get("refreshToken"),
-                        function(at, exp) {
-                            that.set("accessToken", at);
-                            that.set("expiresIn", exp);
-                            that.set("accessTokenDate", (new Date()).valueOf());
-                            // Callback when we finish refreshing
-                            if (callback) {
-                                callback();
-                            }
-                        });
+                    function(at, exp) {
+                        that.set("accessToken", at);
+                        that.set("expiresIn", exp);
+                        that.set("accessTokenDate", (new Date()).valueOf());
+                        // Callback when we finish refreshing
+                        if (callback) {
+                            callback();
+                        }
+                    });
             } else {
                 // No refresh token... just do the popup thing again
                 that.openAuthorizationCodePopup(callback);

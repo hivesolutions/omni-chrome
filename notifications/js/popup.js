@@ -30,8 +30,7 @@ jQuery(document).ready(function() {
         var request = new XMLHttpRequest();
 
         // requests the start of a new session
-        var startSessionUrl = "https://api.frontdoorhq.com/oauth/start_session?access_token="
-                + accessToken;
+        var startSessionUrl = "https://api.frontdoorhq.com/oauth/start_session?access_token=" + accessToken;
         request.open("GET", startSessionUrl, true);
 
         // listens for request state changes
@@ -59,8 +58,7 @@ jQuery(document).ready(function() {
                 else {
                     // invokes the error callback
                     errorCallback
-                            ? errorCallback(response)
-                            : setError(response.exception.message);
+                        ? errorCallback(response) : setError(response.exception.message);
                 }
             }
         };
@@ -72,25 +70,24 @@ jQuery(document).ready(function() {
         // creates a new oauth client for the frontdoor session
         // this should represent an oauth session
         var frontdoorOAuth = new OAuth2("frontdoor", {
-            client_id : "9328490d6d154f9aae68e37095179785",
-            client_secret : "5e5e119d30dd4d9dabaae22a16b2cb12",
-            api_scope : "foundation.log_entrys.list foundation.system_users.show",
-            domain : "app"
+            client_id: "9328490d6d154f9aae68e37095179785",
+            client_secret: "5e5e119d30dd4d9dabaae22a16b2cb12",
+            api_scope: "foundation.log_entrys.list foundation.system_users.show",
+            domain: "app"
         }, function(oauthClient) {
             // tries to authorize the acess token using the client, this
             // call will return immediately in case the token is
             // still valid (token cache system)
             oauthClient.authorize(function() {
-                        // retrieves the access token from the oauth client and uses
-                        // it to store in the local data source and to run the start
-                        // session operation
-                        var accessToken = oauthClient.getAccessToken();
-                        localStorage["frontdoor_oauth_token"] = accessToken;
-                        startSession(accessToken, function(session_id) {
-                                    callback(session_id);
-                                }, function() {
-                                });
-                    });
+                // retrieves the access token from the oauth client and uses
+                // it to store in the local data source and to run the start
+                // session operation
+                var accessToken = oauthClient.getAccessToken();
+                localStorage["frontdoor_oauth_token"] = accessToken;
+                startSession(accessToken, function(session_id) {
+                    callback(session_id);
+                }, function() {});
+            });
         });
     };
 
@@ -99,8 +96,7 @@ jQuery(document).ready(function() {
         var request = new XMLHttpRequest();
 
         // fetches the latest log entries
-        var logEntriesUrl = "https://api.frontdoorhq.com/log_entrys.json?session_id="
-                + sessionId;
+        var logEntriesUrl = "https://api.frontdoorhq.com/log_entrys.json?session_id=" + sessionId;
         request.open("GET", logEntriesUrl, true);
 
         // listens for request state changes
@@ -125,8 +121,7 @@ jQuery(document).ready(function() {
                 else {
                     // invokes the error callback
                     errorCallback
-                            ? errorCallback(response)
-                            : setError(response.exception.message);
+                        ? errorCallback(response) : setError(response.exception.message);
                 }
             }
         };
@@ -141,7 +136,7 @@ jQuery(document).ready(function() {
 
         // creates the notification
         var notification = {
-            message : message
+            message: message
         }
 
         // returns the notification
@@ -158,22 +153,19 @@ jQuery(document).ready(function() {
         var logEntityRepresentation = logEntity["representation"];
 
         // defines the entity url and the image url
-        var entityUrl = "https://app.frontdoorhq.com/ivm/products/"
-                + logEntityObjectId;
-        var imageUrl = "https://api.frontdoorhq.com/system_users/"
-                + logCreateUserObjectId + "/image?session_id=" + session_id
-                + "&size=50";
+        var entityUrl = "https://app.frontdoorhq.com/ivm/products/" + logEntityObjectId;
+        var imageUrl = "https://api.frontdoorhq.com/system_users/" + logCreateUserObjectId +
+            "/image?session_id=" + session_id + "&size=50";
 
         // defines the message
-        var message = "<span href=\"" + entityUrl
-                + "\"><span class=\"highlight highlight-blue\">"
-                + logEntityRepresentation + "</span> was sold.</span>"
+        var message = "<span href=\"" + entityUrl + "\"><span class=\"highlight highlight-blue\">" +
+            logEntityRepresentation + "</span> was sold.</span>"
 
         // creates the notification
         var notification = {
-            entity_url : entityUrl,
-            image_url : imageUrl,
-            message : message
+            entity_url: entityUrl,
+            image_url: imageUrl,
+            message: message
         }
 
         // returns the notification
@@ -190,22 +182,19 @@ jQuery(document).ready(function() {
         var logEntityRepresentation = logEntity["representation"];
 
         // defines the entity url and the image url
-        var entityUrl = "https://app.frontdoorhq.com/ivm/products/"
-                + logEntityObjectId;
-        var imageUrl = "https://api.frontdoorhq.com/system_users/"
-                + logCreateUserObjectId + "/image?session_id=" + session_id
-                + "&size=50";
+        var entityUrl = "https://app.frontdoorhq.com/ivm/products/" + logEntityObjectId;
+        var imageUrl = "https://api.frontdoorhq.com/system_users/" + logCreateUserObjectId +
+            "/image?session_id=" + session_id + "&size=50";
 
         // defines the message
-        var message = "<span href=\"" + entityUrl
-                + "\"><span class=\"highlight highlight-blue\">"
-                + logEntityRepresentation + "</span> was edited.</span>"
+        var message = "<span href=\"" + entityUrl + "\"><span class=\"highlight highlight-blue\">" +
+            logEntityRepresentation + "</span> was edited.</span>"
 
         // creates the notification
         var notification = {
-            entity_url : entityUrl,
-            image_url : imageUrl,
-            message : message
+            entity_url: entityUrl,
+            image_url: imageUrl,
+            message: message
         }
 
         // returns the notification
@@ -222,22 +211,19 @@ jQuery(document).ready(function() {
         var logEntityRepresentation = logEntity["representation"];
 
         // defines the entity url and the image url
-        var entityUrl = "https://app.frontdoorhq.com/ivm/products/"
-                + logEntityObjectId;
-        var imageUrl = "https://api.frontdoorhq.com/system_users/"
-                + logCreateUserObjectId + "/image?session_id=" + session_id
-                + "&size=50";
+        var entityUrl = "https://app.frontdoorhq.com/ivm/products/" + logEntityObjectId;
+        var imageUrl = "https://api.frontdoorhq.com/system_users/" + logCreateUserObjectId +
+            "/image?session_id=" + session_id + "&size=50";
 
         // defines the message
-        var message = "<span href=\"" + entityUrl
-                + "\"><span class=\"highlight highlight-blue\">"
-                + logEntityRepresentation + "</span> was edited.</span>"
+        var message = "<span href=\"" + entityUrl + "\"><span class=\"highlight highlight-blue\">" +
+            logEntityRepresentation + "</span> was edited.</span>"
 
         // creates the notification
         var notification = {
-            entity_url : entityUrl,
-            image_url : imageUrl,
-            message : message
+            entity_url: entityUrl,
+            image_url: imageUrl,
+            message: message
         }
 
         // returns the notification
@@ -250,7 +236,7 @@ jQuery(document).ready(function() {
                 // removes the notifications currently in the notifications list
                 var notificationsList = jQuery(".notifications-list");
                 var notificationElements = jQuery("li:not(.template)",
-                        notificationsList);
+                    notificationsList);
                 notificationElements.remove();
 
                 // retrieves the notification template
@@ -271,25 +257,27 @@ jQuery(document).ready(function() {
 
                     // notifies the log entry
                     switch (logAction) {
-                        case "create" :
+                        case "create":
                             switch (logEntityName) {
-                                case "Sale" :
+                                case "Sale":
                                     // sets the notification creation method
                                     // as the create edit product notification
-                                    notificationCreationMethod = createCreateSaleNotification;
+                                    notificationCreationMethod =
+                                        createCreateSaleNotification;
                                     break;
                             }
 
-                        case "edit" :
+                        case "edit":
                             switch (logEntityName) {
-                                case "Product" :
+                                case "Product":
                                     // sets the notification creation method
                                     // as the create edit product notification
-                                    notificationCreationMethod = createEditProductNotification;
+                                    notificationCreationMethod =
+                                        createEditProductNotification;
                                     break;
                             }
 
-                        default :
+                        default:
                             // sets the notification creation method
                             // as the create edit product notification
                             notificationCreationMethod = createDefaultNotification;
@@ -307,27 +295,27 @@ jQuery(document).ready(function() {
                     // converts the log entry to a notification
                     // and retrieves its entity url
                     var notification = notificationCreationMethod(session_id,
-                            logEntry);
+                        logEntry);
                     var notificationEntityUrl = notification["entity_url"];
 
                     // creates the notification template item
                     // by applying the notification to the template
                     var notificationTemplateItem = notificationTemplate.uxtemplate(
-                            notification, {
-                                apply : false
-                            });
+                        notification, {
+                            apply: false
+                        });
 
                     // opens a browser tab with the entity
                     // displayed in the notification
                     notificationTemplateItem.click(function() {
-                                // creates a new tab with the notification
-                                chrome.tabs.create({
-                                            url : notificationEntityUrl
-                                        }, function(tab) {
-                                            // closes the window
-                                            window.close();
-                                        });
-                            });
+                        // creates a new tab with the notification
+                        chrome.tabs.create({
+                            url: notificationEntityUrl
+                        }, function(tab) {
+                            // closes the window
+                            window.close();
+                        });
+                    });
 
                     // adds the notification template
                     // item to the notifications list
@@ -342,8 +330,8 @@ jQuery(document).ready(function() {
                 // the unread notifications count since the
                 // unread notifications have now been read
                 chrome.extension.sendRequest({
-                            messageType : "resetUnread"
-                        });
+                    messageType: "resetUnread"
+                });
             });
         });
     };
@@ -390,14 +378,14 @@ jQuery(document).ready(function() {
     // when the see all notifications link is clicked
     var seeAllNotifications = jQuery(".see-all-notifications");
     seeAllNotifications.click(function() {
-                // creates a new tab with the log entries list
-                chrome.tabs.create({
-                            url : "https://app.frontdoorhq.com/log_entrys"
-                        }, function(tab) {
-                            // closes the window
-                            window.close();
-                        });
-            });
+        // creates a new tab with the log entries list
+        chrome.tabs.create({
+            url: "https://app.frontdoorhq.com/log_entrys"
+        }, function(tab) {
+            // closes the window
+            window.close();
+        });
+    });
 
     // updates the notifications
     updateNotifications();

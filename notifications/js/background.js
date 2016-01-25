@@ -45,8 +45,8 @@ jQuery(document).ready(function() {
 
         // updates the browser action badge with the new notifications count
         chrome.browserAction.setBadgeText({
-                    text : badgeText
-                });
+            text: badgeText
+        });
     };
 
     var notifyEditProduct = function(logEntry) {
@@ -59,15 +59,13 @@ jQuery(document).ready(function() {
         var logEntityRepresentation = logEntity["representation"];
 
         // defines the entity url and the image url
-        var entityUrl = "https://app.frontdoorhq.com/ivm/products/"
-                + logEntityObjectId;
-        var imageUrl = "https://api.frontdoorhq.com/system_users/"
-                + logCreateUserObjectId + "/image?size=50";
+        var entityUrl = "https://app.frontdoorhq.com/ivm/products/" + logEntityObjectId;
+        var imageUrl = "https://api.frontdoorhq.com/system_users/" + logCreateUserObjectId +
+            "/image?size=50";
 
         // defines the message
-        var message = "<span href=\"" + entityUrl
-                + "\"><span class=\"highlight highlight-blue\">"
-                + logEntityRepresentation + "</span> was edited.</span>"
+        var message = "<span href=\"" + entityUrl + "\"><span class=\"highlight highlight-blue\">" +
+            logEntityRepresentation + "</span> was edited.</span>"
 
         // encodes the notification parameters
         entityUrl = encodeURIComponent(entityUrl);
@@ -79,8 +77,8 @@ jQuery(document).ready(function() {
 
         // creates a notification with the message (passing the arguments
         // as get arguments in the url) and then shows it
-        var notificationUrl = "notification.html?entity_url=" + entityUrl
-                + "&image_url=" + imageUrl + "&message=" + message;
+        var notificationUrl = "notification.html?entity_url=" + entityUrl + "&image_url=" + imageUrl +
+            "&message=" + message;
         var notification = webkitNotifications.createHTMLNotification(notificationUrl);
         notification.show();
     };
@@ -95,9 +93,9 @@ jQuery(document).ready(function() {
 
         // notifies the log entry
         switch (logAction) {
-            case "edit" :
+            case "edit":
                 switch (logEntityName) {
-                    case "Product" :
+                    case "Product":
                         // notifies the edit product action
                         notifyEditProduct(logEntry);
                         break;
@@ -113,36 +111,35 @@ jQuery(document).ready(function() {
     // this should be able to receive the complete set of messages that respect
     // the current user filtering
     _body.communication("default", {
-                url : "https://api.frontdoorhq.com/communication",
-                timeout : 500,
-                callbacks : [messageProcessor]
-            });
+        url: "https://api.frontdoorhq.com/communication",
+        timeout: 500,
+        callbacks: [messageProcessor]
+    });
 
     // listens for messages from the current extension
     chrome.extension.onRequest.addListener(
-            function(request, sender, sendResponse) {
-                // starts the value to be used as the return
-                // value in the callback function
-                var value;
+        function(request, sender, sendResponse) {
+            // starts the value to be used as the return
+            // value in the callback function
+            var value;
 
-                switch (request.messageType) {
-                    case "resetUnread" :
-                        value = setUnreadNotifications(0);
-                        break;
+            switch (request.messageType) {
+                case "resetUnread":
+                    value = setUnreadNotifications(0);
+                    break;
 
-                    case "decreaseUnread" :
-                        value = setUnreadNotifications(unreadNotificationsCount
-                                - 1);
-                        break;
+                case "decreaseUnread":
+                    value = setUnreadNotifications(unreadNotificationsCount - 1);
+                    break;
 
-                    case "clear" :
-                        value = clearStorage();
-                        break;
-                }
+                case "clear":
+                    value = clearStorage();
+                    break;
+            }
 
-                // sends the response back to the callback
-                // handler to notify it about the corrent
-                // handling of the event
-                sendResponse(value);
-            });
+            // sends the response back to the callback
+            // handler to notify it about the corrent
+            // handling of the event
+            sendResponse(value);
+        });
 });

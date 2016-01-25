@@ -23,8 +23,7 @@
 // __copyright__ = Copyright (c) 2008-2015 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-var Controller = function() {
-};
+var Controller = function() {};
 
 Controller.prototype.render_account = function(data) {
     // retrieves the various options from the local storage
@@ -35,18 +34,18 @@ Controller.prototype.render_account = function(data) {
     // creates the list of items that represent the various
     // options to be presented
     var options = [{
-                key : "Email",
-                value : "joamag@gmail.com"
-            }, {
-                key : "Password",
-                value : "*************"
-            }, {
-                key : "Session Identifier",
-                value : sessionId
-            }, {
-                key : "OAuth Token",
-                value : oauthToken
-            }];
+        key: "Email",
+        value: "joamag@gmail.com"
+    }, {
+        key: "Password",
+        value: "*************"
+    }, {
+        key: "Session Identifier",
+        value: sessionId
+    }, {
+        key: "OAuth Token",
+        value: oauthToken
+    }];
 
     // creates the template handler and assigns the
     // options to the handler and processes the received
@@ -81,21 +80,21 @@ Controller.prototype.render_account = function(data) {
     // registers for the click event on the clear settings
     // element (button)
     clearSettings.click(function() {
-                // sends a request to the background to
-                // clear the current data cache
-                chrome.extension.sendRequest(null, {
-                            messageType : "clear"
-                        }, function(response) {
+        // sends a request to the background to
+        // clear the current data cache
+        chrome.extension.sendRequest(null, {
+            messageType: "clear"
+        }, function(response) {
 
-                             controller.change("account");
-                        });
-            });
+            controller.change("account");
+        });
+    });
 
     // registers for the click event on the clear settings
     // element (button)
     refreshSettings.click(function() {
-                controller.change("account");
-            });
+        controller.change("account");
+    });
 };
 
 Controller.prototype.render_status = function(data) {
@@ -130,43 +129,42 @@ Controller.prototype.change = function(name) {
     // handles it by calling the appropriate handler
     // in the controller structure
     jQuery.ajax({
-                url : url,
-                dataType : "text",
-                processData : false,
-                context : this,
-                error : function(request, status, error) {
-                },
-                success : function(data) {
-                    var method = this["render_" + name];
-                    method.call(this, data);
-                }
-            });
+        url: url,
+        dataType: "text",
+        processData: false,
+        context: this,
+        error: function(request, status, error) {},
+        success: function(data) {
+            var method = this["render_" + name];
+            method.call(this, data);
+        }
+    });
 };
 
 jQuery(document).ready(function() {
-            // tenho de utilizar um sistema de templates
-            // do ux para renderizar isto como deve de ser
-            // criar uma abstracao de troca de pagina para
-            // o ux depois ate pode ser utilizada no frontdoor
-            // na parte de ajax
+    // tenho de utilizar um sistema de templates
+    // do ux para renderizar isto como deve de ser
+    // criar uma abstracao de troca de pagina para
+    // o ux depois ate pode ser utilizada no frontdoor
+    // na parte de ajax
 
-            var controller = new Controller();
+    var controller = new Controller();
 
-            var active = jQuery(".menu > .button.active");
-            var name = active.attr("data-name");
-            controller.change(name);
+    var active = jQuery(".menu > .button.active");
+    var name = active.attr("data-name");
+    controller.change(name);
 
-            jQuery(".menu > .button").click(function() {
-                        var element = jQuery(this);
-                        var menu = element.parents(".menu");
+    jQuery(".menu > .button").click(function() {
+        var element = jQuery(this);
+        var menu = element.parents(".menu");
 
-                        var active = jQuery("> .button.active", menu);
-                        active.removeClass("active");
+        var active = jQuery("> .button.active", menu);
+        active.removeClass("active");
 
-                        element.addClass("active");
+        element.addClass("active");
 
-                        var name = element.attr("data-name");
+        var name = element.attr("data-name");
 
-                        controller.change(name);
-                    });
-        });
+        controller.change(name);
+    });
+});

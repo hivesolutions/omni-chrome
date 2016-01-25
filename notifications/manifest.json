@@ -1,26 +1,26 @@
 {
-    "manifest_version" : 2,
-    "name" : "Frontdoor Notifications",
-    "version" : "1.0.0",
-    "description" : "Keep track of frontdoor events, with desktop notifications.",
-    "icons" : {
-        "16" : "images/icons/frontdoor_icon_16.png",
-        "48" : "images/icons/frontdoor_icon_48.png",
-        "128" : "images/icons/frontdoor_icon_128.png"
+    "manifest_version": 2,
+    "name": "Frontdoor Notifications",
+    "version": "1.0.0",
+    "description": "Keep track of frontdoor events, with desktop notifications.",
+    "icons": {
+        "16": "images/icons/frontdoor_icon_16.png",
+        "48": "images/icons/frontdoor_icon_48.png",
+        "128": "images/icons/frontdoor_icon_128.png"
     },
-    "permissions" : ["*://*.frontdoorhq.com/", "notifications", "background"],
-    "background" : {
-        "page" : "background.html"
+    "permissions": ["*://*.frontdoorhq.com/", "notifications", "background"],
+    "background": {
+        "page": "background.html"
     },
-    "options_page" : "options.html",
-    "browser_action" : {
-        "default_icon" : "images/icons/frontdoor_action_icon_19.png",
-        "default_popup" : "popup.html",
-        "default_title" : "Frontdoor Notifications"
+    "options_page": "options.html",
+    "browser_action": {
+        "default_icon": "images/icons/frontdoor_action_icon_19.png",
+        "default_popup": "popup.html",
+        "default_title": "Frontdoor Notifications"
     },
-    "content_scripts" : [{
-                "matches" : ["https://*.frontdoorhq.com/resources/css/layout.css*"],
-                "js" : ["libs/oauth2/oauth2_inject.js"],
-                "run_at" : "document_start"
-            }]
+    "content_scripts": [{
+        "matches": ["https://*.frontdoorhq.com/resources/css/layout.css*"],
+        "js": ["libs/oauth2/oauth2_inject.js"],
+        "run_at": "document_start"
+    }]
 }
