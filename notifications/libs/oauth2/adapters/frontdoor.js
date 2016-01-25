@@ -1,7 +1,8 @@
 OAuth2.adapter("frontdoor", {
     authorizationCodeURL: function(config) {
-        return "https://{{DOMAIN}}.frontdoorhq.com/oauth/authorize?client_id={{CLIENT_ID}}&redirect_uri={{REDIRECT_URI}}&scope={{API_SCOPE}}&response_type=code"
-        .replace(
+        return ("https://{{DOMAIN}}.frontdoorhq.com/oauth/authorize" +
+            "?client_id={{CLIENT_ID}}&redirect_uri={{REDIRECT_URI}}&scope={{API_SCOPE}}&response_type=code"
+        ).replace(
             "{{CLIENT_ID}}", config.clientId).replace("{{REDIRECT_URI}}",
             this.redirectURL(config)).replace("{{API_SCOPE}}",
             config.apiScope).replace("{{DOMAIN}}", config.domain);

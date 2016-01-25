@@ -1,7 +1,8 @@
 OAuth2.adapter("google", {
     authorizationCodeURL: function(config) {
-        return "https://accounts.google.com/o/oauth2/auth?client_id={{CLIENT_ID}}&redirect_uri={{REDIRECT_URI}}&scope={{API_SCOPE}}&response_type=code"
-        .replace(
+        return ("https://accounts.google.com/o/oauth2/auth" +
+            "?client_id={{CLIENT_ID}}&redirect_uri={{REDIRECT_URI}}&scope={{API_SCOPE}}&response_type=code"
+        ).replace(
             "{{CLIENT_ID}}", config.clientId).replace("{{REDIRECT_URI}}",
             this.redirectURL(config)).replace("{{API_SCOPE}}",
             config.apiScope);
