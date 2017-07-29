@@ -36,7 +36,7 @@ jQuery(document).ready(function() {
         // listens for request state changes
         request.onreadystatechange = function() {
             // parses the response in case the request is complete
-            if (request.readyState == 4) {
+            if (request.readyState === 4) {
                 try {
                     // parses the response
                     var response = JSON.parse(request.responseText);
@@ -47,7 +47,7 @@ jQuery(document).ready(function() {
 
                 // invokes the success callback in case
                 // the request was successful
-                if (request.status == 200) {
+                if (request.status === 200) {
                     var sessionId = response["_session_id"];
                     localStorage["frontdoor_session_id"] = sessionId;
 
@@ -102,7 +102,7 @@ jQuery(document).ready(function() {
         // listens for request state changes
         request.onreadystatechange = function() {
             // parses the response in case the request is complete
-            if (request.readyState == 4) {
+            if (request.readyState === 4) {
                 try {
                     // parses the response
                     var response = JSON.parse(request.responseText);
@@ -113,7 +113,7 @@ jQuery(document).ready(function() {
 
                 // invokes the success callback in case
                 // the request was successful
-                if (request.status == 200) {
+                if (request.status === 200) {
                     // invokes the success callback
                     successCallback(response);
                 }
@@ -287,7 +287,8 @@ jQuery(document).ready(function() {
                     // creation method was retrieved, meaning
                     // that the log entry cannot be converted
                     // to a notification
-                    if (notificationCreationMethod == null) {
+                    if (notificationCreationMethod === null || notificationCreationMethod ===
+                        undefined) {
                         // continues to the next log entry
                         continue;
                     }
